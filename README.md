@@ -9,7 +9,8 @@
 - [ ] JUnit이 제공하는 `@ParamterizedTest` 애노테이션 사용하기
   - 테스트 메서드 하나에 비슷한 여러 케이스를 넣고 싶을 때, 메서드 바디 부분을 더럽히지 않고 추가할 수 있다.
 - [ ] 학습 레퍼런스 남기기
-- [ ] 코드 컨벤션을 지키기 위해 extension 등을 이용하기
+- [x] 코드 컨벤션을 지키기 위해 extension 등을 이용하기
+  - [woowacourse-docs 리포지토리](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 참고해서 로컬 인텔리제이에 코드 포매터를 적용했다.
 - [ ] 테스트 메서드명에 snake_case 사용하지 않기
 
 ### 공통 피드백 참고
