@@ -122,7 +122,9 @@
 - [ ] 학습 레퍼런스 남기기
 - [x] 코드 컨벤션을 지키기 위해 extension 등을 이용하기
   - [woowacourse-docs 리포지토리](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 참고해서 로컬 인텔리제이에 코드 포매터를 적용했다.
-- [ ] 테스트 메서드명에 snake_case 사용하지 않기
+- ~~테스트 메서드명에 snake_case 사용하지 않기~~
+  - [Java Style Guide](https://google.github.io/styleguide/javaguide.html#s5.2.3-method-names)에서 테스트 메서드명에서는 lowerCamelCase와 함께 언더 스코어(`_`)의 사용을 허용하고 있음을 확인했다.
+  - [ ] 대신 `methodName_expectedBehavior_stateUnderTest` 구조로 네이밍하기로 한다.
 
 ### 공통 피드백 참고
 - [ ] 배열 대신 컬렉션 사용하기
