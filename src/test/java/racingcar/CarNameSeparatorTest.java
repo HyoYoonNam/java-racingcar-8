@@ -28,6 +28,15 @@ public class CarNameSeparatorTest {
         assertThat(separatedList).isEqualTo(carNameList);
     }
 
+    @ParameterizedTest(name = "[{index}] \"{0}\" -> {1}")
+    @MethodSource("provideCarNameWithWhitespace")
+    @DisplayName("자동차 이름을 분리할 때, 각 요소가 될 문자열의 앞 또는 뒤에 공백이 존재한다면, 공백을 제거한다")
+    void stripWhitespace(String carName, List<String> carNameList) {
+        List<String> separatedList = carNameSeparator.separate(carName);
+
+        assertThat(separatedList).isEqualTo(carNameList);
+    }
+
     private static Stream<Arguments> provideCarNameWithNoWhitespace() {
         return Stream.of(
                 Arguments.of("pobi,woni,jun", List.of("pobi", "woni", "jun")),
@@ -36,6 +45,16 @@ public class CarNameSeparatorTest {
                 Arguments.of("루드", List.of("루드")),
                 // "자동차 이름은 5자 이하만 가능하다"라는 요구 사항은 자동차(Car) 도메인의 제약이므로 여기서는 테스트가 실패하면 안 됩니다.
                 Arguments.of("length is longer than 5,5자 초과 이름", List.of("length is longer than 5", "5자 초과 이름"))
+        );
+    }
+
+    private static Stream<Arguments> provideCarNameWithWhitespace() {
+        return Stream.of(
+                Arguments.of(" pobi, woni, jun", List.of("pobi", "woni", "jun")),
+                Arguments.of("pobi ,woni ,jun ", List.of("pobi", "woni", "jun")),
+                Arguments.of(" pobi , woni , jun ", List.of("pobi", "woni", "jun")),
+                Arguments.of(" \t  pobi , woni\n , jun ", List.of("pobi", "woni", "jun")),
+                Arguments.of("\t루드 , 비코\n", List.of("루드", "비코"))
         );
     }
 }
