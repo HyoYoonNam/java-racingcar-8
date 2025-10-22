@@ -135,3 +135,7 @@
     - '~ 변경', '~추가'와 같은 명사형이나 '~추가했다'와 같은 과거형은 지양한다.
   - [ ] 본문은 '어떻게'보다 '무엇을', '왜'에 맞춰 작성하기
 - [ ] 어려운 부분이 있다면, 테코톡에서 다룬 영상이 있는지 우선적으로 확인하기
+
+### PR 리뷰 참고
+- [ ] [예외를 남길 땐 단순 메시지 뿐만 아니라, 문제가 발생한 값도 포함해주기](https://github.com/woowacourse-precourse/java-calculator-8/pull/530/files/802c242348735f9ea082658ea90654576ea8525f#r2448583808)
+- [ ] [null 체크가 필요하다면, Objects.requireNonNull을 사용하고, 예외는 래핑하기](https://github.com/woowacourse-precourse/java-calculator-8/pull/113#discussion_r2450380973)
