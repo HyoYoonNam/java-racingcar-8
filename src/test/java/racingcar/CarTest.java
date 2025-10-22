@@ -21,4 +21,16 @@ public class CarTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("사용할 수 없는 이름입니다: " + name);
     }
+
+    @ParameterizedTest(name = "[{index}] \"{0}\" -> 예외 발생")
+    @ValueSource(strings = {
+            "rude01",           // 순수한 영문 + 숫자 조합으로 5자를 초과
+            "rude v", "r_udev"  // 허용된 스페이스나 언더 스코어를 포함하여 초과
+    })
+    @DisplayName("자동차 이름이 5자를 초과하면 예외를 발생시킨다")
+    void constructor_throwsException_nameIsLongerThan5(String name) {
+        assertThatThrownBy(() -> new Car(name))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageMatching("이름은 5자를 넘을 수 없습니다: " + name);
+    }
 }

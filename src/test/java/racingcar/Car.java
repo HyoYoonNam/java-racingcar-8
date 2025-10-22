@@ -11,5 +11,9 @@ public class Car {
         if (invalidNamePattern.matcher(name).find()) {
             throw new IllegalArgumentException("사용할 수 없는 이름입니다: " + name);
         }
+
+        if (name.length() > 5) {
+            throw new IllegalArgumentException("이름은 5자를 넘을 수 없습니다: " + name);
+        }
     }
 }
