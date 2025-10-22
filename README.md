@@ -99,8 +99,9 @@
 > 해당 섹션은 1주 차를 진행하면서/마치고 느낀 아쉬운 부분들을 2주 차에는 놓치지 않기 위해서 리마인드 하기 위함입니다.
 
 ### 스스로 느낀 부분
-- [ ] JUnit이 제공하는 `@ParamterizedTest` 애노테이션 사용하기
+- [x] JUnit이 제공하는 `@ParamterizedTest` 애노테이션 사용하기
   - 테스트 메서드 하나에 비슷한 여러 케이스를 넣고 싶을 때, 메서드 바디 부분을 더럽히지 않고 추가할 수 있다.
+  - `@CsvSource`는 `String`에 특화되어 있고, `@ValueSource`는 추가로 숫자 타입 정도까지 커버가 가능하다. 만약 `List` 등의 참조형 객체가 필요하다면 `@MethodSource`가 적절하다.
 - [ ] 학습 레퍼런스 남기기
 - [x] 코드 컨벤션을 지키기 위해 extension 등을 이용하기
   - [woowacourse-docs 리포지토리](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 참고해서 로컬 인텔리제이에 코드 포매터를 적용했다.
