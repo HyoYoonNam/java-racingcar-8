@@ -8,12 +8,19 @@ public class Car {
     private static final Pattern invalidNamePattern = Pattern.compile(invalidNameRegex);
 
     public Car(String name) {
-        if (invalidNamePattern.matcher(name).find()) {
-            throw new IllegalArgumentException("사용할 수 없는 이름입니다: " + name);
-        }
+        validateNamePattern(name);
+        validateNameLength(name);
+    }
 
-        if (name.length() > 5) {
+    private static void validateNamePattern(String name) {
+        if (invalidNamePattern.matcher(name).find()) {
             throw new IllegalArgumentException("이름은 5자를 넘을 수 없습니다: " + name);
+        }
+    }
+
+    private static void validateNameLength(String name) {
+        if (name.length() > 5) {
+            throw new IllegalArgumentException("사용할 수 없는 이름입니다: " + name);
         }
     }
 }
