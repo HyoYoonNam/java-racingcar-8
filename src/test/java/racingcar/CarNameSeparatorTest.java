@@ -22,19 +22,19 @@ public class CarNameSeparatorTest {
     @ParameterizedTest(name = "[{index}] \"{0}\" -> {1}")
     @MethodSource("provideCarNameWithNoWhitespace")
     @DisplayName("자동차 이름을 쉼표 기준으로 분리한다")
-    void separateCarNameByComma(String carName, List<String> carNameList) {
-        List<String> separatedList = carNameSeparator.separate(carName);
+    void separateCarNameByComma(String carNamesString, List<String> carNames) {
+        List<String> separated = carNameSeparator.separate(carNamesString);
 
-        assertThat(separatedList).isEqualTo(carNameList);
+        assertThat(separated).isEqualTo(carNames);
     }
 
     @ParameterizedTest(name = "[{index}] \"{0}\" -> {1}")
     @MethodSource("provideCarNameWithWhitespace")
     @DisplayName("자동차 이름을 분리할 때, 각 요소가 될 문자열의 앞 또는 뒤에 공백이 존재한다면, 공백을 제거한다")
-    void stripWhitespace(String carName, List<String> carNameList) {
-        List<String> separatedList = carNameSeparator.separate(carName);
+    void stripWhitespace(String carNamesString, List<String> carNames) {
+        List<String> separated = carNameSeparator.separate(carNamesString);
 
-        assertThat(separatedList).isEqualTo(carNameList);
+        assertThat(separated).isEqualTo(carNames);
     }
 
     private static Stream<Arguments> provideCarNameWithNoWhitespace() {

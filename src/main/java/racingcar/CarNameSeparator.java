@@ -7,8 +7,8 @@ public class CarNameSeparator {
 
     public static final String DELIMITER = ",";
 
-    public List<String> separate(String carname) {
-        return Arrays.stream(carname.split(DELIMITER))
+    public List<String> separate(String carNamesString) {
+        return Arrays.stream(carNamesString.split(DELIMITER))
                 .map(String::strip)
                 .toList();
     }
