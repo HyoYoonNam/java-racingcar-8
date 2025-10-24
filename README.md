@@ -137,18 +137,18 @@ _nothing_
   - [woowacourse-docs 리포지토리](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 참고해서 로컬 인텔리제이에 코드 포매터를 적용했다.
 - ~~테스트 메서드명에 snake_case 사용하지 않기~~
   - [Java Style Guide](https://google.github.io/styleguide/javaguide.html#s5.2.3-method-names)에서 테스트 메서드명에서는 lowerCamelCase와 함께 언더 스코어(`_`)의 사용을 허용하고 있음을 확인했다.
-  - [ ] 대신 `methodName_expectedBehavior_stateUnderTest` 구조로 네이밍하기로 한다.
+  - [x] 대신 `methodName_expectedBehavior_stateUnderTest` 구조로 네이밍하기로 한다.
 
 ### 공통 피드백 참고
 - [ ] 배열 대신 컬렉션 사용하기
   - 1주 차에서 리팩터링을 통해 대부분의 배열을 컬렉션으로 변경했으나, 변경하지 못한 부분이 있었다.
 - 커밋 메시지에 대해서
-  - [ ] 제목은 명령조로 작성, 마침표(.) 금지
+  - [x] 제목은 명령조로 작성, 마침표(.) 금지
     - 한글 명령조로 작성하려면 '~한다', '~함' 등으로 하면 되겠다.
     - '~ 변경', '~추가'와 같은 명사형이나 '~추가했다'와 같은 과거형은 지양한다.
-  - [ ] 본문은 '어떻게'보다 '무엇을', '왜'에 맞춰 작성하기
+  - [x] 본문은 '어떻게'보다 '무엇을', '왜'에 맞춰 작성하기
 - [ ] 어려운 부분이 있다면, 테코톡에서 다룬 영상이 있는지 우선적으로 확인하기
 
 ### PR 리뷰 참고
-- [ ] [예외를 남길 땐 단순 메시지 뿐만 아니라, 문제가 발생한 값도 포함해주기](https://github.com/woowacourse-precourse/java-calculator-8/pull/530/files/802c242348735f9ea082658ea90654576ea8525f#r2448583808)
+- [x] [예외를 남길 땐 단순 메시지 뿐만 아니라, 문제가 발생한 값도 포함해주기](https://github.com/woowacourse-precourse/java-calculator-8/pull/530/files/802c242348735f9ea082658ea90654576ea8525f#r2448583808)
 - [ ] [null 체크가 필요하다면, Objects.requireNonNull을 사용하고, 예외는 래핑하기](https://github.com/woowacourse-precourse/java-calculator-8/pull/113#discussion_r2450380973)
