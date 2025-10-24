@@ -9,10 +9,10 @@ public class RacingGame {
     private static final int MIN_TOTAL_ROUNDS = 1;
 
     public void start(String carNamesString, int totalRounds) {
-        init(carNamesString, totalRounds);
+        setup(carNamesString, totalRounds);
     }
 
-    private void init(String carNamesString, int totalRounds) {
+    private void setup(String carNamesString, int totalRounds) {
         ParameterValidator.validate(carNamesString, totalRounds);
     }
 
