@@ -32,4 +32,14 @@ public class RacingGameTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("게임의 총 진행 회차는 1회 이상이어야 합니다: " + totalRounds);
     }
+
+    @ParameterizedTest(name = "[{index}] (\"{0}\", {1}) -> 예외 발생")
+    @CsvSource(value = {"ru_de,ru_de:1", "pobi,pobi:2", "rude,vico,rude:1"},
+            delimiter = ':')
+    @DisplayName("참가하는 자동차 이름에 중복이 있다면 게임을 시작할 수 없다")
+    void constructor_throwsException_carNamesAreDuplicated(String carNamesString, int totalRounds) {
+        assertThatThrownBy(() -> new RacingGame().start(carNamesString, totalRounds))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageMatching("중복된 자동차 이름이 존재합니다: " + carNamesString);
+    }
 }
