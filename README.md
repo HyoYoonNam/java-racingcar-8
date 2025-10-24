@@ -55,6 +55,12 @@ _nothing_
 ### 2. `RacingGame` 객체
 ![RacingGame-객체-설계](https://github.com/user-attachments/assets/758ee143-4490-4b2a-98c9-2a8ec7b37c15)
 
+### 3. 외부로 공개되지 않는 기능을 테스트하는 방법을 고민
+![외부로-공개되지-않는-기능에-대한-테스트-설계](https://github.com/user-attachments/assets/b7d5be0c-3f49-49b7-b2ca-aff33ba1b6c2)
+
+### 4. '게임 시작'에 대한 메서드명이 적절한지 고민
+![게임-시작에-대한-메서드명-설계](https://github.com/user-attachments/assets/252ed4b6-d677-4c25-88b3-87b0084dd044)
+
 ## 문제 파악하기
 > [!NOTE]
 > 
