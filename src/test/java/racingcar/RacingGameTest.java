@@ -1,8 +1,10 @@
 package racingcar;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -41,5 +43,16 @@ public class RacingGameTest {
         assertThatThrownBy(() -> new RacingGame(carNamesString, totalRounds))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("중복된 자동차 이름이 존재합니다: " + carNamesString);
+    }
+
+    @Test
+    @DisplayName("정상적인 입력(자동차 이름과 시도할 횟수)에 대해 게임을 성공적으로 생성한다")
+    void constructor_success_validInput() {
+        String carNamesString = "pobi, woni, jun";
+        int totalRounds = 1;
+
+        RacingGame racingGame = new RacingGame(carNamesString, totalRounds);
+
+        assertThat(racingGame).isNotNull();
     }
 }
