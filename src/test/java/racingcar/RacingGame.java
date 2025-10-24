@@ -5,6 +5,9 @@ import java.util.Set;
 
 public class RacingGame {
 
+    private static final int MIN_CAR_COUNT = 2;
+    private static final int MIN_TOTAL_ROUNDS = 1;
+
     public void start(String carNamesString, int totalRounds) {
         init(carNamesString, totalRounds);
     }
@@ -31,8 +34,9 @@ public class RacingGame {
         }
 
         private static void validateCarCount(String carNamesString, List<String> separated) {
-            if (separated.size() < 2) {
-                throw new IllegalArgumentException("참가하는 자동차 수가 2개 미만입니다. 자동차의 수나 구분자를 확인해주세요: " + carNamesString);
+            if (separated.size() < MIN_CAR_COUNT) {
+                throw new IllegalArgumentException("참가하는 자동차 수가 " + MIN_CAR_COUNT + "개 미만입니다."
+                        + " 자동차의 수나 구분자를 확인해주세요: " + carNamesString);
             }
         }
 
@@ -44,8 +48,8 @@ public class RacingGame {
         }
 
         private static void validateTotalRounds(int totalRounds) {
-            if (totalRounds < 1) {
-                throw new IllegalArgumentException("게임의 총 진행 회차는 1회 이상이어야 합니다: " + totalRounds);
+            if (totalRounds < MIN_TOTAL_ROUNDS) {
+                throw new IllegalArgumentException("게임의 총 진행 회차는 " + MIN_TOTAL_ROUNDS + "회 이상이어야 합니다: " + totalRounds);
             }
         }
     }
