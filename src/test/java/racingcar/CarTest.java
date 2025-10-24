@@ -1,9 +1,11 @@
 package racingcar;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class CarTest {
@@ -32,5 +34,19 @@ public class CarTest {
         assertThatThrownBy(() -> new Car(name))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("이름은 5자를 넘을 수 없습니다: " + name);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "0,0", "1,0", "2,0", "3,0",                 // 3 이하, 멈춤
+            "4,1", "5,1", "6,1", "7,1", "8,1", "9,1"    // 4 이상, 전진
+    })
+    @DisplayName("숫자 값에 따라 전진하거나 멈출 수 있다")
+    void move_moveForwardOrStop_byNumber(int number, int expectedPosition) {
+        Car car = new Car("rude");
+
+        car.move(number);
+
+        assertThat(car.getPosition()).isEqualTo(expectedPosition);
     }
 }

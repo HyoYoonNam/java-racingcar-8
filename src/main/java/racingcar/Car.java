@@ -4,8 +4,23 @@ import java.util.regex.Pattern;
 
 public class Car {
 
+    private int position = 0;
+
     public Car(String name) {
         NameValidator.validate(name);
+    }
+
+    public void move(int number) {
+        if (number < 4) {
+            // do nothing
+            return;
+        }
+
+        this.position++;
+    }
+
+    public int getPosition() {
+        return this.position;
     }
 
     private static class NameValidator {
