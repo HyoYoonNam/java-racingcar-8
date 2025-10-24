@@ -8,8 +8,12 @@ public class RacingGame {
     private static final int MIN_CAR_COUNT = 2;
     private static final int MIN_TOTAL_ROUNDS = 1;
 
-    public void start(String carNamesString, int totalRounds) {
+    public RacingGame(String carNamesString, int totalRounds) {
         setup(carNamesString, totalRounds);
+    }
+
+    public void start() {
+        // TODO: 게임 진행 로직 구현
     }
 
     private void setup(String carNamesString, int totalRounds) {

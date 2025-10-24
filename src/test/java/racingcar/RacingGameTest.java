@@ -13,7 +13,7 @@ public class RacingGameTest {
             delimiter = ':')
     @DisplayName("참가하는 자동차가 2개 미만이라면 게임을 시작할 수 없다")
     void constructor_throwsException_carCountIsOne(String carNamesString, int totalRounds) {
-        assertThatThrownBy(() -> new RacingGame().start(carNamesString, totalRounds))
+        assertThatThrownBy(() -> new RacingGame(carNamesString, totalRounds))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("참가하는 자동차 수가 2개 미만입니다. 자동차의 수나 구분자를 확인해주세요: " + carNamesString);
     }
@@ -28,7 +28,7 @@ public class RacingGameTest {
             delimiter = ':')
     @DisplayName("레이싱 게임의 총 진행 회차가 1회 미만이라면 게임을 시작할 수 없다")
     void constructor_throwsException_totalRounds(String carNamesString, int totalRounds) {
-        assertThatThrownBy(() -> new RacingGame().start(carNamesString, totalRounds))
+        assertThatThrownBy(() -> new RacingGame(carNamesString, totalRounds))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("게임의 총 진행 회차는 1회 이상이어야 합니다: " + totalRounds);
     }
@@ -38,7 +38,7 @@ public class RacingGameTest {
             delimiter = ':')
     @DisplayName("참가하는 자동차 이름에 중복이 있다면 게임을 시작할 수 없다")
     void constructor_throwsException_carNamesAreDuplicated(String carNamesString, int totalRounds) {
-        assertThatThrownBy(() -> new RacingGame().start(carNamesString, totalRounds))
+        assertThatThrownBy(() -> new RacingGame(carNamesString, totalRounds))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("중복된 자동차 이름이 존재합니다: " + carNamesString);
     }
