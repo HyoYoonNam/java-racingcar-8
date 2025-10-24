@@ -49,8 +49,10 @@ _nothing_
 > `문제 파악하기 섹션`에서는 문제를 파악하는 수준에서 할 수 있는 간단한 설계를 했다면,
 > 해당 섹션에는 책임에 대한 객체, 변수명, 메서드명 등 더 세부적인 내용들을 고려한 좀 더 고차원적인 설계를 합니다.
 
+### 1. 초기 구상
 ![설계](https://github.com/user-attachments/assets/2f3d6632-ed85-4e94-8742-b891747292c1)
 
+### 2. `RacingGame` 객체
 ![RacingGame-객체-설계](https://github.com/user-attachments/assets/758ee143-4490-4b2a-98c9-2a8ec7b37c15)
 
 ## 문제 파악하기
