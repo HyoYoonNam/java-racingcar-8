@@ -25,8 +25,8 @@ public class Car {
 
     private static class NameValidator {
 
-        private static final String invalidNameRegex = "[^a-zA-Z0-9_ ]|[_ ]{2,}";
-        private static final Pattern invalidNamePattern = Pattern.compile(invalidNameRegex);
+        private static final String INVALID_NAME_REGEX = "[^a-zA-Z0-9_ ]|[_ ]{2,}";
+        private static final Pattern INVALID_NAME_PATTERN = Pattern.compile(INVALID_NAME_REGEX);
 
         private static void validate(String name) {
             validateNamePattern(name);
@@ -34,7 +34,7 @@ public class Car {
         }
 
         private static void validateNamePattern(String name) {
-            if (invalidNamePattern.matcher(name).find()) {
+            if (INVALID_NAME_PATTERN.matcher(name).find()) {
                 throw new IllegalArgumentException("사용할 수 없는 이름입니다: " + name);
             }
         }
