@@ -18,6 +18,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 // https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/
 public class OutputViewTest {
 
+    private static final String POSITION_FORMAT = "-";
     private ByteArrayOutputStream outputStream;
     private final PrintStream originalOut = System.out;
 
@@ -54,7 +55,7 @@ public class OutputViewTest {
 
             sb.append(name).append(" : ");
             if (i >= 4) {
-                sb.append(OutputViewConstant.POSITION_FORMAT);
+                sb.append(POSITION_FORMAT);
             }
             sb.append("\n");
         }
