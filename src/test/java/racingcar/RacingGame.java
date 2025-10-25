@@ -8,8 +8,16 @@ public class RacingGame {
     private static final int MIN_CAR_COUNT = 2;
     private static final int MIN_TOTAL_ROUNDS = 1;
 
+    private final NumberGenerator numberGenerator;
+
     public RacingGame(String carNamesString, int totalRounds) {
         setup(carNamesString, totalRounds);
+        this.numberGenerator = new RandomNumberGenerator(0, 9);
+    }
+
+    public RacingGame(String carNamesString, int totalRounds, NumberGenerator numberGenerator) {
+        setup(carNamesString, totalRounds);
+        this.numberGenerator = numberGenerator;
     }
 
     public void start() {
