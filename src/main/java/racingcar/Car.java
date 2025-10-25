@@ -5,9 +5,11 @@ import java.util.regex.Pattern;
 public class Car {
 
     private int position = 0;
+    private final String name;
 
     public Car(String name) {
         NameValidator.validate(name);
+        this.name = name;
     }
 
     public void move(int number) {
@@ -21,6 +23,10 @@ public class Car {
 
     public int getPosition() {
         return this.position;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     private static class NameValidator {
