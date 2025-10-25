@@ -7,7 +7,10 @@ public class CarNameSeparator {
 
     public static final String DELIMITER = ",";
 
-    public List<String> separate(String carNamesString) {
+    private CarNameSeparator() {
+    }
+
+    public static List<String> separate(String carNamesString) {
         return Arrays.stream(carNamesString.split(DELIMITER))
                 .map(String::strip)
                 .toList();

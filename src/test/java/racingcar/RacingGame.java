@@ -33,8 +33,7 @@ public class RacingGame {
         }
 
         private static void validateCarNamesString(String carNamesString) {
-            CarNameSeparator carNameSeparator = new CarNameSeparator();
-            List<String> separated = carNameSeparator.separate(carNamesString);
+            List<String> separated = CarNameSeparator.separate(carNamesString);
 
             validateCarCount(carNamesString, separated);
 

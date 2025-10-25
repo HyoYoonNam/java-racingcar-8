@@ -12,18 +12,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class CarNameSeparatorTest {
 
-    private CarNameSeparator carNameSeparator;
-
-    @BeforeEach
-    void beforeEach() {
-        carNameSeparator = new CarNameSeparator();
-    }
-
     @ParameterizedTest(name = "[{index}] \"{0}\" -> {1}")
     @MethodSource("provideCarNameWithNoWhitespace")
     @DisplayName("자동차 이름을 쉼표 기준으로 분리한다")
     void separateCarNameByComma(String carNamesString, List<String> carNames) {
-        List<String> separated = carNameSeparator.separate(carNamesString);
+        List<String> separated = CarNameSeparator.separate(carNamesString);
 
         assertThat(separated).isEqualTo(carNames);
     }
@@ -32,7 +25,7 @@ public class CarNameSeparatorTest {
     @MethodSource("provideCarNameWithWhitespace")
     @DisplayName("자동차 이름을 분리할 때, 각 요소가 될 문자열의 앞 또는 뒤에 공백이 존재한다면, 공백을 제거한다")
     void stripWhitespace(String carNamesString, List<String> carNames) {
-        List<String> separated = carNameSeparator.separate(carNamesString);
+        List<String> separated = CarNameSeparator.separate(carNamesString);
 
         assertThat(separated).isEqualTo(carNames);
     }
