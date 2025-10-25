@@ -66,6 +66,13 @@ _nothing_
 
 콘솔 출력에 대한 테스트는 [여기](https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/)에서 소개하는 방법으로 하면 되겠다.
 
+### 6. 랜덤 값에 의존하지 않고 테스트 하려면
+다른 구현들을 대부분 마치고 RacingGame이 각 회차의 결과와 최종 우승자를 출력하는 요구 사항에 대한 구현이 남은 상태다.
+
+그런데 결국 실제 `RacingGame.start` 메서드는 랜덤 값에 의존하기 때문에 테스트 일관성이 보장되지 않는다.
+
+이런 상황에서 mock이나 stub을 쓴다고 주워 듣기는 했는데, 정확한 해결 방안은 모르기 때문에 일단 이에 대한 학습을 먼저 진행한다.
+
 ## 문제 파악하기
 > [!NOTE]
 > 
