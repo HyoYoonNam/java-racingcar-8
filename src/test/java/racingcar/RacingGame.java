@@ -11,21 +11,17 @@ public class RacingGame {
     private final NumberGenerator numberGenerator;
 
     public RacingGame(String carNamesString, int totalRounds) {
-        setup(carNamesString, totalRounds);
+        ParameterValidator.validate(carNamesString, totalRounds);
         this.numberGenerator = new RandomNumberGenerator(0, 9);
     }
 
     public RacingGame(String carNamesString, int totalRounds, NumberGenerator numberGenerator) {
-        setup(carNamesString, totalRounds);
+        ParameterValidator.validate(carNamesString, totalRounds);
         this.numberGenerator = numberGenerator;
     }
 
     public void start() {
         // TODO: 게임 진행 로직 구현
-    }
-
-    private void setup(String carNamesString, int totalRounds) {
-        ParameterValidator.validate(carNamesString, totalRounds);
     }
 
     // TODO: validate를 제외한 나머지 메서드를 RacingGame에서 호출할 수 없도록 하는 캡슐화를 고려할 필요가 있다.
