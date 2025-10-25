@@ -61,6 +61,11 @@ _nothing_
 ### 4. '게임 시작'에 대한 메서드명이 적절한지 고민
 ![게임-시작에-대한-메서드명-설계](https://github.com/user-attachments/assets/252ed4b6-d677-4c25-88b3-87b0084dd044)
 
+### 5. RacingGame의 start 메서드 내부에서 각 라운드를 진행하고, 결과를 출력하는 흐름
+![RacingGame-start-내부-구상](https://github.com/user-attachments/assets/947aa5eb-9da4-42b3-b21f-d31437e4ace1)
+
+콘솔 출력에 대한 테스트는 [여기](https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/)에서 소개하는 방법으로 하면 되겠다.
+
 ## 문제 파악하기
 > [!NOTE]
 > 
