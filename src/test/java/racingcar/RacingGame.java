@@ -8,20 +8,32 @@ public class RacingGame {
     private static final int MIN_CAR_COUNT = 2;
     private static final int MIN_TOTAL_ROUNDS = 1;
 
+    private final List<Car> cars;
+    private final int totalRounds;
     private final NumberGenerator numberGenerator;
 
     public RacingGame(String carNamesString, int totalRounds) {
         ParameterValidator.validate(carNamesString, totalRounds);
+        this.cars = createCars(carNamesString);
+        this.totalRounds = totalRounds;
         this.numberGenerator = new RandomNumberGenerator(0, 9);
     }
 
     public RacingGame(String carNamesString, int totalRounds, NumberGenerator numberGenerator) {
         ParameterValidator.validate(carNamesString, totalRounds);
+        this.cars = createCars(carNamesString);
+        this.totalRounds = totalRounds;
         this.numberGenerator = numberGenerator;
     }
 
     public void start() {
         // TODO: 게임 진행 로직 구현
+    }
+
+    private static List<Car> createCars(String carNamesString) {
+        return CarNameSeparator.separate(carNamesString).stream()
+                .map(Car::new)
+                .toList();
     }
 
     // TODO: validate를 제외한 나머지 메서드를 RacingGame에서 호출할 수 없도록 하는 캡슐화를 고려할 필요가 있다.
