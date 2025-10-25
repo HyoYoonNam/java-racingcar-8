@@ -19,6 +19,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class OutputViewTest {
 
     private static final String POSITION_FORMAT = "-";
+    private static final int MOVE_FORWARD_THRESHOLD = 4;
+
     private ByteArrayOutputStream outputStream;
     private final PrintStream originalOut = System.out;
 
@@ -54,7 +56,7 @@ public class OutputViewTest {
             carNumberMap.put(new Car(name), i);
 
             sb.append(name).append(" : ");
-            if (i >= 4) {
+            if (i >= MOVE_FORWARD_THRESHOLD) {
                 sb.append(POSITION_FORMAT);
             }
             sb.append("\n");
