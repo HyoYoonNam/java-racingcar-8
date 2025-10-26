@@ -29,12 +29,15 @@ public class RacingGame {
     }
 
     public void start() {
+        OutputView.printHeader();
+
         while (++roundCount <= totalRounds) {
             for (Car car : cars) {
                 car.move(numberGenerator.generate());
             }
             OutputView.printCarPositions(cars);
         }
+
         List<String> winners = findWinners(cars);
         OutputView.printWinners(winners);
     }
