@@ -5,6 +5,7 @@ import java.util.List;
 public class OutputView {
 
     private static final String POSITION_FORMAT = "-";
+    private static final String PRINT_WINNERS_PREFIX = "최종 우승자 : ";
 
     private OutputView() {
     }
@@ -13,5 +14,9 @@ public class OutputView {
         for (Car car : cars) {
             System.out.println(car.getName() + " : " + POSITION_FORMAT.repeat(car.getPosition()));
         }
+    }
+
+    public static void printWinners(List<String> winners) {
+        System.out.println(PRINT_WINNERS_PREFIX + String.join(", ", winners));
     }
 }

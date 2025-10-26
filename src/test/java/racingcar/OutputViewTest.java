@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
@@ -19,6 +20,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class OutputViewTest {
 
     private static final String POSITION_FORMAT = "-";
+    private static final String PRINT_WINNERS_PREFIX = "최종 우승자 : ";
     private static final int MOVE_FORWARD_THRESHOLD = 4;
 
     private ByteArrayOutputStream outputStream;
@@ -47,6 +49,15 @@ public class OutputViewTest {
         assertThat(outputStream.toString()).contains(expectedOutput);
     }
 
+    @ParameterizedTest(name = "[{index}] {0} -> \"{1}\"")
+    @MethodSource("provideWinnersAndExpectedOutput")
+    @DisplayName("최종 우승자(들) 이름을 출력한다")
+    void printWinners_a(List<String> winners, String expectedOutput) {
+        OutputView.printWinners(winners);
+
+        assertThat(outputStream.toString()).contains(expectedOutput);
+    }
+
     private static Stream<Arguments> provideAllMoveScenarios() {
         Map<Car, Integer> carNumberMap = new LinkedHashMap<>();
         StringBuilder sb = new StringBuilder();
@@ -64,6 +75,13 @@ public class OutputViewTest {
 
         return Stream.of(
                 Arguments.of(carNumberMap, sb.toString())
+        );
+    }
+
+    private static Stream<Arguments> provideWinnersAndExpectedOutput() {
+        return Stream.of(
+                Arguments.of(List.of("pobi"), PRINT_WINNERS_PREFIX + "pobi"),
+                Arguments.of(List.of("pobi", "jun"), PRINT_WINNERS_PREFIX + "pobi, jun")
         );
     }
 }
