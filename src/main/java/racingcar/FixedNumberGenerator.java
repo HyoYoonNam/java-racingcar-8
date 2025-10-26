@@ -11,4 +11,9 @@ public class FixedNumberGenerator implements NumberGenerator {
     public int generate() {
         return this.number;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "(number=" + this.number + ")";
+    }
 }

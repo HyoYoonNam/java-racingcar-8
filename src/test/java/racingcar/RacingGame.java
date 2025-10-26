@@ -12,6 +12,8 @@ public class RacingGame {
     private final int totalRounds;
     private final NumberGenerator numberGenerator;
 
+    private int roundCount = 0;
+
     public RacingGame(String carNamesString, int totalRounds) {
         ParameterValidator.validate(carNamesString, totalRounds);
         this.cars = createCars(carNamesString);
@@ -27,7 +29,13 @@ public class RacingGame {
     }
 
     public void start() {
-        // TODO: 게임 진행 로직 구현
+        while (++roundCount <= totalRounds) {
+            for (Car car : cars) {
+                car.move(numberGenerator.generate());
+            }
+            OutputView.printCarPositions(cars);
+        }
+        // TODO: 우승자 계산 및 출력 로직 추가
     }
 
     private static List<Car> createCars(String carNamesString) {
