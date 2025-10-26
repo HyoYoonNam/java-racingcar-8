@@ -32,7 +32,7 @@ public class RacingGamePrintTest {
     }
 
     @ParameterizedTest(name = "[{index}] {2} for {1} rounds -> {3}]")
-    @MethodSource("provideGameParametersAndExpectedOutputs")
+    @MethodSource("provideGameParametersAndExpectedEachRoundOutputs")
     @DisplayName("각 차수별 실행 결과를 출력한다")
     void start_printResultEachRound(String carNamesString, int totalRounds, NumberGenerator numberGenerator,
                                     String[] expectedOutputs) {
@@ -60,7 +60,7 @@ public class RacingGamePrintTest {
     }
 
     // TODO: 메서드명 개선 필요. 각 라운드 결과만을 검증하기 위한 것인데, Outputs는 최종 우승자까지 포함된 뉘앙스
-    private static Stream<Arguments> provideGameParametersAndExpectedOutputs() {
+    private static Stream<Arguments> provideGameParametersAndExpectedEachRoundOutputs() {
         return Stream.of(
                 // 전진하는 경우
                 Arguments.of("pobi, woni", 1, new FixedNumberGenerator(MOVING_FORWARD),
