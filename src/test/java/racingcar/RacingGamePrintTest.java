@@ -45,6 +45,21 @@ public class RacingGamePrintTest {
         assertThat(outputStream.toString()).contains(expectedOutputs);
     }
 
+    @ParameterizedTest(name = "[{index}] {0} -> {3}")
+    @MethodSource("provideGameParametersAndExpectedWinners")
+    @DisplayName("마지막 차수가 종료되면 우승자를 출력한다")
+    void start_printWinnersAfterFinalRound(String carNamesString, int totalRounds, NumberGenerator numberGenerator,
+                                           String ExpectedWinners) {
+        RacingGame racingGame = new RacingGame(carNamesString, totalRounds, numberGenerator);
+
+        // when
+        racingGame.start();
+
+        // then
+        assertThat(outputStream.toString()).contains(ExpectedWinners);
+    }
+
+    // TODO: 메서드명 개선 필요. 각 라운드 결과만을 검증하기 위한 것인데, Outputs는 최종 우승자까지 포함된 뉘앙스
     private static Stream<Arguments> provideGameParametersAndExpectedOutputs() {
         return Stream.of(
                 // 전진하는 경우
@@ -60,6 +75,13 @@ public class RacingGamePrintTest {
                         new String[]{
                                 "po_bi : ", "wo ni : ", "rude : "
                         })
+        );
+    }
+
+    private static Stream<Arguments> provideGameParametersAndExpectedWinners() {
+        return Stream.of(
+                Arguments.of("pobi, woni", 1, new FixedNumberGenerator(MOVING_FORWARD), "최종 우승자 : pobi, woni"),
+                Arguments.of("po_bi, wo ni, rude", 1, new FixedNumberGenerator(STOP), "최종 우승자 : po_bi, wo ni, rude")
         );
     }
 }

@@ -35,12 +35,25 @@ public class RacingGame {
             }
             OutputView.printCarPositions(cars);
         }
-        // TODO: 우승자 계산 및 출력 로직 추가
+        List<String> winners = findWinners(cars);
+        OutputView.printWinners(winners);
     }
 
     private static List<Car> createCars(String carNamesString) {
         return CarNameSeparator.separate(carNamesString).stream()
                 .map(Car::new)
+                .toList();
+    }
+
+    private static List<String> findWinners(List<Car> cars) {
+        int maxPosition = cars.stream()
+                .mapToInt(Car::getPosition)
+                .max() // TODO: 비즈니스 로직상 해당 값이 무조건 존재하는데, 안전한 처리를 위해 orElse를 넣어야 되는지 고민됨.
+                .orElse(0); // TODO: 오히려 orElse가 'null' 가능성이 있다고 착각을 유발하는 단점이 있음. 최종 판단(orElse 대신 getAsInt 사용)은 유보함.
+
+        return cars.stream()
+                .filter(car -> car.getPosition() == maxPosition)
+                .map(Car::getName)
                 .toList();
     }
 
