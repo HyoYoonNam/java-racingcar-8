@@ -1,12 +1,9 @@
 package racingcar.domain;
 
-import static racingcar.exception.ErrorMessage.CAR_COUNT_LESS_THAN_MINIMUM;
-import static racingcar.exception.ErrorMessage.CAR_NAME_DUPLICATED;
-import static racingcar.exception.ErrorMessage.ROUNDS_LESS_THAN_MINIMUM;
-
 import java.util.List;
 import java.util.Set;
 
+import racingcar.exception.ErrorMessage;
 import racingcar.numbergenerator.NumberGenerator;
 import racingcar.numbergenerator.RandomNumberGenerator;
 import racingcar.separator.CarNameSeparator;
@@ -89,20 +86,20 @@ public class RacingGame {
 
         private static void validateCarCount(String carNamesString, List<String> separated) {
             if (separated.size() < MIN_CAR_COUNT) {
-                throw new IllegalArgumentException(CAR_COUNT_LESS_THAN_MINIMUM.build(carNamesString));
+                throw new IllegalArgumentException(ErrorMessage.CAR_COUNT_LESS_THAN_MINIMUM.build(carNamesString));
             }
         }
 
         private static void validateCarNamesDuplicated(String carNamesString, List<String> separated) {
             Set<String> carNames = Set.copyOf(separated);
             if (separated.size() != carNames.size()) {
-                throw new IllegalArgumentException(CAR_NAME_DUPLICATED.build(carNamesString));
+                throw new IllegalArgumentException(ErrorMessage.CAR_NAME_DUPLICATED.build(carNamesString));
             }
         }
 
         private static void validateTotalRounds(int totalRounds) {
             if (totalRounds < MIN_TOTAL_ROUNDS) {
-                throw new IllegalArgumentException(ROUNDS_LESS_THAN_MINIMUM.build(totalRounds));
+                throw new IllegalArgumentException(ErrorMessage.ROUNDS_LESS_THAN_MINIMUM.build(totalRounds));
             }
         }
     }

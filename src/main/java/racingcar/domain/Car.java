@@ -1,9 +1,8 @@
 package racingcar.domain;
 
-import static racingcar.exception.ErrorMessage.CAR_NAME_INVALID;
-import static racingcar.exception.ErrorMessage.CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM;
-
 import java.util.regex.Pattern;
+
+import racingcar.exception.ErrorMessage;
 
 public class Car {
 
@@ -47,13 +46,13 @@ public class Car {
 
         private static void validateNamePattern(String name) {
             if (INVALID_NAME_PATTERN.matcher(name).find()) {
-                throw new IllegalArgumentException(CAR_NAME_INVALID.build(name));
+                throw new IllegalArgumentException(ErrorMessage.CAR_NAME_INVALID.build(name));
             }
         }
 
         private static void validateNameLength(String name) {
             if (name.length() > MAX_NAME_LENGTH) {
-                throw new IllegalArgumentException(CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM.build(name));
+                throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM.build(name));
             }
         }
     }

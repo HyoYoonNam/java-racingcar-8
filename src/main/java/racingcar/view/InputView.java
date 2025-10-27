@@ -1,11 +1,9 @@
 package racingcar.view;
 
-import static racingcar.exception.ErrorMessage.INPUT_LINE_NO_EXISTS;
-import static racingcar.exception.ErrorMessage.INPUT_LINE_DOES_NOT_NUMBER;
-
 import java.util.NoSuchElementException;
 
 import camp.nextstep.edu.missionutils.Console;
+import racingcar.exception.ErrorMessage;
 
 public class InputView {
 
@@ -31,7 +29,7 @@ public class InputView {
         try {
             line = Console.readLine();
         } catch (NoSuchElementException e) {
-            throw new IllegalArgumentException(INPUT_LINE_NO_EXISTS.getMessage(), e);
+            throw new IllegalArgumentException(ErrorMessage.INPUT_LINE_NO_EXISTS.getMessage(), e);
         }
 
         return line;
@@ -43,9 +41,9 @@ public class InputView {
         try {
             userInput = Integer.parseInt(Console.readLine());
         } catch (NoSuchElementException e) {
-            throw new IllegalArgumentException(INPUT_LINE_NO_EXISTS.getMessage(), e);
+            throw new IllegalArgumentException(ErrorMessage.INPUT_LINE_NO_EXISTS.getMessage(), e);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(INPUT_LINE_DOES_NOT_NUMBER.getMessage(), e);
+            throw new IllegalArgumentException(ErrorMessage.INPUT_LINE_DOES_NOT_NUMBER.getMessage(), e);
         }
 
         return userInput;
