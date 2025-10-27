@@ -4,18 +4,20 @@
 ```markdown
 src/main/java
 └── racingcar
-    ├── Application.java
-    ├── domain
-    │   ├── Car.java
-    │   └── RacingGame.java
-    ├── numbergenerator
-    │   ├── NumberGenerator.java
-    │   └── RandomNumberGenerator.java
-    ├── separator
-    │   └── CarNameSeparator.java
-    └── view
-        ├── InputView.java
-        └── OutputView.java
+  ├── Application.java
+  ├── domain
+  │   ├── Car.java
+  │   └── RacingGame.java
+  ├── exception
+  │   └── ErrorMessage.java
+  ├── numbergenerator
+  │   ├── NumberGenerator.java
+  │   └── RandomNumberGenerator.java
+  ├── separator
+  │   └── CarNameSeparator.java
+  └── view
+       ├── InputView.java
+       └── OutputView.java
 ```
 
 ## 클래스 다이어그램
