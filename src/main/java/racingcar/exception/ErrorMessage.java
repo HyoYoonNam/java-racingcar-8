@@ -1,6 +1,7 @@
 package racingcar.exception;
 
 public enum ErrorMessage {
+    APPLICATION_ILLEGAL_ARGUMENT_EX("[ERROR] 오류가 발생했습니다: "),
     CAR_NAME_INVALID("사용할 수 없는 이름입니다: "),
     CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM("이름은 5자를 넘을 수 없습니다: "),
     CAR_NAME_DUPLICATED("중복된 자동차 이름이 존재합니다: "),
