@@ -145,6 +145,19 @@ int intLine = Integer.parseInt(Console.readLine()); // 숫자형으로 받으려
 
 래핑이라는 동일한(?) 행위지만, 그 목적과 필요가 다르다는 점이 "나는 정말 필요에 의해서 새로운 방법을 학습하고 있어!"라는 자신감을 내게 주어 특히나 좋았던 부분이다.
 
+### 8. Console.close()를 호출해줘야 할까?
+미션에서 제공되는 `Console` API는 `Scanner`를 닫는 `close()`를 제공한다.
+
+1주 차에도 이 사실은 인지하고 있었으나, 그 판단을 뒤로 미루다가 결국 결정하지 못하고 호출하지 않게 되었는데 2주 차에는 다음과 같은 이유로 '닫을 필요 없다'는 결론을 내리기로 한다.
+
+(이전에도 어렴풋이 Scanner는 반납할 필요가 없다는 것을 어디선가 들어서 알고는 있었지만) 근거를 기반으로 한 결론을 내리기 위해 [여러 자료들](#Scanner를-닫아야-되는지에-대한-여러-의견들)을 찾아봤다.
+
+요약하자면, 표준 입력 스트림은 JVM에서 잘 관리해주기 때문에 굳이 개발자가 명시적으로 닫을 필요가 없다는 것이다!
+
+그 조금의 자원을 아껴보자고 오히려 코드 가독성이 저하되고, 표준 입력 스트림이 기존보다 빨리 닫힘에 의한 알 수 없는 에러 발생에 대한 위험도가 더 크다고 판단할 수 있다.
+
+(네트워크 소켓, 파일 입출력 스트림, 데이터베이스 커넥 등은 인위적으로 가져 온 자원이기 때문에 당연히 명시적으로 닫아줘야 한다!)
+
 ## 문제 파악하기
 > [!NOTE]
 > 
@@ -261,3 +274,11 @@ int intLine = Integer.parseInt(Console.readLine()); // 숫자형으로 받으려
 [Unit Testing of System.out.println() with JUnit](https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/)
 
 [import static과 import 순서](https://arc.net/e/BC3ED568-BD92-46C3-AC6C-DCDD160B687C)
+
+<a id="Scanner를-닫아야-되는지에-대한-여러-의견들"></a>
+
+**Scanner를 닫아야 되는지에 대한 여러 의견들**
+- [In which case should I use System.in.close()?](https://stackoverflow.com/questions/55264878/in-which-case-should-i-use-system-in-close)
+- [Close a Scanner linked to System.in](https://stackoverflow.com/questions/14142853/close-a-scanner-linked-to-system-in)
+- [What if I do not close the Scanner?](https://stackoverflow.com/questions/25790294/what-if-i-do-not-close-the-scanner)
+- [자바신공 04항 - 예외 처리와 자원 누수 방지](https://wikidocs.net/191794)
