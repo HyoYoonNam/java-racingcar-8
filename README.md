@@ -197,7 +197,7 @@ int intLine = Integer.parseInt(Console.readLine()); // 숫자형으로 받으려
 - [x] JUnit이 제공하는 `@ParamterizedTest` 애노테이션 사용하기
   - 테스트 메서드 하나에 비슷한 여러 케이스를 넣고 싶을 때, 메서드 바디 부분을 더럽히지 않고 추가할 수 있다.
   - `@CsvSource`는 `String`에 특화되어 있고, `@ValueSource`는 추가로 숫자 타입 정도까지 커버가 가능하다. 만약 `List` 등의 참조형 객체가 필요하다면 `@MethodSource`가 적절하다.
-- [ ] 학습 레퍼런스 남기기
+- [x] 학습 레퍼런스 남기기
 - [x] 코드 컨벤션을 지키기 위해 extension 등을 이용하기
   - [woowacourse-docs 리포지토리](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 참고해서 로컬 인텔리제이에 코드 포매터를 적용했다.
 - ~~테스트 메서드명에 snake_case 사용하지 않기~~
@@ -217,3 +217,20 @@ int intLine = Integer.parseInt(Console.readLine()); // 숫자형으로 받으려
 ### PR 리뷰 참고
 - [x] [예외를 남길 땐 단순 메시지 뿐만 아니라, 문제가 발생한 값도 포함해주기](https://github.com/woowacourse-precourse/java-calculator-8/pull/530/files/802c242348735f9ea082658ea90654576ea8525f#r2448583808)
 - [ ] [null 체크가 필요하다면, Objects.requireNonNull을 사용하고, 예외는 래핑하기](https://github.com/woowacourse-precourse/java-calculator-8/pull/113#discussion_r2450380973)
+
+## References
+[JUnit Parameterized Tests](https://www.baeldung.com/parameterized-tests-junit-5)
+
+[Unit Test Naming Conventions](https://medium.com/@stefanovskyi/unit-test-naming-conventions-dd9208eadbea)
+
+[Pattern, Matcher 클래스](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+
+[프론트엔드의 한글 정규식, 어떻게 쓸 것인가](https://helia-17.tistory.com/16)
+
+[좋은 코드를 위한 자바 변수명 네이밍 - 변수 이름에 자료형이 들어간다면?](https://tecoble.techcourse.co.kr/post/2020-04-24-variable_naming/)
+
+[코딩 명명 규칙 시 주의해야 할 영어 단어](https://blog.naver.com/posionsnake/222146800990)
+
+[Unit Testing of System.out.println() with JUnit](https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/)
+
+[import static과 import 순서](https://arc.net/e/BC3ED568-BD92-46C3-AC6C-DCDD160B687C)
