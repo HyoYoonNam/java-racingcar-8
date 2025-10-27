@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 
 public class Car {
 
+    private static final int MOVE_FORWARD_THRESHOLD = 4;
+    private static final int MAX_NAME_LENGTH = 5;
+
     private int position = 0;
     private final String name;
 
@@ -16,7 +19,7 @@ public class Car {
     }
 
     public void move(int number) {
-        if (number < 4) {
+        if (number < MOVE_FORWARD_THRESHOLD) {
             // do nothing
             return;
         }
@@ -49,7 +52,7 @@ public class Car {
         }
 
         private static void validateNameLength(String name) {
-            if (name.length() > 5) {
+            if (name.length() > MAX_NAME_LENGTH) {
                 throw new IllegalArgumentException(CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM.build(name));
             }
         }
