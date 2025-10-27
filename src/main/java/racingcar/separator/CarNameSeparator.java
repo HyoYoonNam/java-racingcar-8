@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.separator;
 
 import java.util.Arrays;
 import java.util.List;
