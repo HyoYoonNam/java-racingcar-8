@@ -1,5 +1,8 @@
 package racingcar.domain;
 
+import static racingcar.exception.ErrorMessage.CAR_NAME_INVALID;
+import static racingcar.exception.ErrorMessage.CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM;
+
 import java.util.regex.Pattern;
 
 public class Car {
@@ -41,13 +44,13 @@ public class Car {
 
         private static void validateNamePattern(String name) {
             if (INVALID_NAME_PATTERN.matcher(name).find()) {
-                throw new IllegalArgumentException("사용할 수 없는 이름입니다: " + name);
+                throw new IllegalArgumentException(CAR_NAME_INVALID.build(name));
             }
         }
 
         private static void validateNameLength(String name) {
             if (name.length() > 5) {
-                throw new IllegalArgumentException("이름은 5자를 넘을 수 없습니다: " + name);
+                throw new IllegalArgumentException(CAR_NAME_LENGTH_GREATER_THAN_MAXIMUM.build(name));
             }
         }
     }

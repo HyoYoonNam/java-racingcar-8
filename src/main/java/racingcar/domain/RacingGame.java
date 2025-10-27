@@ -1,5 +1,9 @@
 package racingcar.domain;
 
+import static racingcar.exception.ErrorMessage.CAR_COUNT_LESS_THAN_MINIMUM;
+import static racingcar.exception.ErrorMessage.CAR_NAME_DUPLICATED;
+import static racingcar.exception.ErrorMessage.ROUNDS_LESS_THAN_MINIMUM;
+
 import java.util.List;
 import java.util.Set;
 
@@ -85,21 +89,20 @@ public class RacingGame {
 
         private static void validateCarCount(String carNamesString, List<String> separated) {
             if (separated.size() < MIN_CAR_COUNT) {
-                throw new IllegalArgumentException("참가하는 자동차 수가 " + MIN_CAR_COUNT + "개 미만입니다."
-                        + " 자동차의 수나 구분자를 확인해주세요: " + carNamesString);
+                throw new IllegalArgumentException(CAR_COUNT_LESS_THAN_MINIMUM.build(carNamesString));
             }
         }
 
         private static void validateCarNamesDuplicated(String carNamesString, List<String> separated) {
             Set<String> carNames = Set.copyOf(separated);
             if (separated.size() != carNames.size()) {
-                throw new IllegalArgumentException("중복된 자동차 이름이 존재합니다: " + carNamesString);
+                throw new IllegalArgumentException(CAR_NAME_DUPLICATED.build(carNamesString));
             }
         }
 
         private static void validateTotalRounds(int totalRounds) {
             if (totalRounds < MIN_TOTAL_ROUNDS) {
-                throw new IllegalArgumentException("게임의 총 진행 회차는 " + MIN_TOTAL_ROUNDS + "회 이상이어야 합니다: " + totalRounds);
+                throw new IllegalArgumentException(ROUNDS_LESS_THAN_MINIMUM.build(totalRounds));
             }
         }
     }
