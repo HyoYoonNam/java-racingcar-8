@@ -1,7 +1,8 @@
 package racingcar.view;
 
-import camp.nextstep.edu.missionutils.Console;
 import java.util.NoSuchElementException;
+
+import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 

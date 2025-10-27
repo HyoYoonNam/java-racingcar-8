@@ -2,9 +2,10 @@ package racingcar.domain;
 
 import java.util.List;
 import java.util.Set;
-import racingcar.separator.CarNameSeparator;
+
 import racingcar.numbergenerator.NumberGenerator;
 import racingcar.numbergenerator.RandomNumberGenerator;
+import racingcar.separator.CarNameSeparator;
 import racingcar.view.OutputView;
 
 public class RacingGame {
