@@ -55,7 +55,7 @@ public class OutputViewTest {
     @ParameterizedTest(name = "[{index}] {0} -> \"{1}\"")
     @MethodSource("provideWinnersAndExpectedOutput")
     @DisplayName("최종 우승자(들) 이름을 출력한다")
-    void printWinners_a(List<String> winners, String expectedOutput) {
+    void printWinners_outputContainsExpectedOutput(List<String> winners, String expectedOutput) {
         OutputView.printWinners(winners);
 
         assertThat(outputStream.toString()).contains(expectedOutput);
