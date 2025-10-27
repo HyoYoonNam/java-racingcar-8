@@ -212,7 +212,7 @@ int intLine = Integer.parseInt(Console.readLine()); // 숫자형으로 받으려
   - [x] 대신 `methodName_expectedBehavior_stateUnderTest` 구조로 네이밍하기로 한다.
 
 ### 공통 피드백 참고
-- [ ] 배열 대신 컬렉션 사용하기
+- [x] 배열 대신 컬렉션 사용하기
   - 1주 차에서 리팩터링을 통해 대부분의 배열을 컬렉션으로 변경했으나, 변경하지 못한 부분이 있었다.
 - 커밋 메시지에 대해서
   - [x] 제목은 명령조로 작성, 마침표(.) 금지
