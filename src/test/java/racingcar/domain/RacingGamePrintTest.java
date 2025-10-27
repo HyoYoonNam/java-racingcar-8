@@ -63,7 +63,6 @@ public class RacingGamePrintTest {
         assertThat(outputStream.toString()).contains(ExpectedWinners);
     }
 
-    // TODO: 메서드명 개선 필요. 각 라운드 결과만을 검증하기 위한 것인데, Outputs는 최종 우승자까지 포함된 뉘앙스
     private static Stream<Arguments> provideGameParametersAndExpectedEachRoundOutputs() {
         return Stream.of(
                 // 전진하는 경우

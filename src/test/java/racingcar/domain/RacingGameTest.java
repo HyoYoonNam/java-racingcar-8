@@ -20,11 +20,6 @@ public class RacingGameTest {
                 .hasMessageMatching("참가하는 자동차 수가 2개 미만입니다. 자동차의 수나 구분자를 확인해주세요: " + carNamesString);
     }
 
-    /* TODO:
-     * "rude,vico:''"와 같이 totalRounds에 빈 문자열이 입력되는 경우에 대한 예외 처리가 애매하다.
-     * (지금 생각으로는) 문제에서 Console.readLine만을 제공하기 때문에 Application에서 타입 변환을 시도하고,
-     * 예외를 처리하는 것이 적절해보인다. 일단 RacingGameTest에 넣기는 애매해서 생략하고 진행한다.
-     */
     @ParameterizedTest(name = "[{index}] (\"{0}\", {1}) -> 예외 발생")
     @CsvSource(value = {"rude,vico:0"},
             delimiter = ':')
