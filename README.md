@@ -1,5 +1,12 @@
 # java-racingcar-precourse
 
+## 클래스 다이어그램
+![class-diagram](./assets/racingcar-class-diagram.png)
+
+위 그림은 IntelliJ의 Show Diagram 기능을 이용해서 생성 후, 일부 수정을 거쳤습니다. 사용 방식은 아래를 참조하세요.
+
+![intellij-show-diagram](./assets/intellij-show-diagram.png)
+
 ## 구현할 기능 목록
 > [!NOTE]
 > 구현할 기능 목록에 대해서 각 객체별로 구분합니다.
