@@ -2,6 +2,7 @@ package racingcar;
 
 import java.util.List;
 import java.util.Set;
+import racingcar.view.OutputView;
 
 public class RacingGame {
 
