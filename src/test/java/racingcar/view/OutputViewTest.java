@@ -14,7 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import racingcar.Car;
+import racingcar.domain.Car;
 
 // System.out.println() test reference:
 // https://www.geeksforgeeks.org/advance-java/unit-testing-of-system-out-println-with-junit/
