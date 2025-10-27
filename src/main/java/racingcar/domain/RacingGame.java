@@ -65,10 +65,12 @@ public class RacingGame {
                 .toList();
     }
 
-    // TODO: validate를 제외한 나머지 메서드를 RacingGame에서 호출할 수 없도록 하는 캡슐화를 고려할 필요가 있다.
     private static class ParameterValidator {
 
-        private static void validate(String carNamesString, int totalRounds) {
+        private ParameterValidator() {
+        }
+
+        public static void validate(String carNamesString, int totalRounds) {
             validateCarNamesString(carNamesString);
             validateTotalRounds(totalRounds);
         }
