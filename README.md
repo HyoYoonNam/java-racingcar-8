@@ -1,5 +1,23 @@
 # java-racingcar-precourse
 
+## 프로젝트 구조
+```markdown
+src/main/java
+└── racingcar
+    ├── Application.java
+    ├── domain
+    │   ├── Car.java
+    │   └── RacingGame.java
+    ├── numbergenerator
+    │   ├── NumberGenerator.java
+    │   └── RandomNumberGenerator.java
+    ├── separator
+    │   └── CarNameSeparator.java
+    └── view
+        ├── InputView.java
+        └── OutputView.java
+```
+
 ## 클래스 다이어그램
 ![class-diagram](./assets/racingcar-class-diagram.png)
 
