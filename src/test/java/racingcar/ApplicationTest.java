@@ -32,6 +32,22 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @Test
+    void 공동_우승자_테스트() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("pobi,woni", "2");
+                    assertThat(output()).contains(
+                            "pobi : -", "woni : ",
+                            "pobi : -", "woni : -",
+                            "최종 우승자 : pobi, woni");
+                },
+                // 각 n번 째 줄은 n번 째 라운드의 각 참가자가 얻는 숫자를 의미함
+                MOVING_FORWARD, STOP,
+                STOP, MOVING_FORWARD
+        );
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
